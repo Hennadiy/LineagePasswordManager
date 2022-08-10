@@ -73,7 +73,7 @@ namespace PasswordManager
 
             if (!File.Exists(_credsPath))
             {
-                File.Create(_credsPath);
+                _jsonFileUtility.SaveFile(_credsPath, new Credential[0]);
                 return;
             }
             _credentials = _jsonFileUtility.ReadFile<List<Credential>>(_credsPath);
