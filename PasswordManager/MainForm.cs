@@ -84,7 +84,7 @@ namespace PasswordManager
 
             foreach (var credential in _credentials)
             {
-                CredentialsListBox.Items.Add(credential.AccountName);
+                AddCredentialOnView(credential);
             }
         }
 
@@ -164,13 +164,18 @@ namespace PasswordManager
                 IsDefault = IsDefaultCheckBox.Checked
             };
             _credentials.Add(cred);
-            CredentialsListBox.Items.Add(cred.AccountName);
+            AddCredentialOnView(cred);
             _jsonFileUtility.SaveFile(_credsPath, _credentials);
 
             DescriptionTextBox.Text = "";
             LoginTextBox.Text = "";
             PasswordTextBox.Text = "";
             IsDefaultCheckBox.Checked = false;
+        }
+
+        private void AddCredentialOnView(Credential cred)
+        {
+            CredentialsListBox.Items.Add(cred.AccountName + (cred.IsDefault ? " (default)" : ""));
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
