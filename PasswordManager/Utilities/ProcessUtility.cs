@@ -9,6 +9,8 @@ namespace PasswordManager.Utilities
 {
     public class ProcessUtility
     {
+        private readonly string _enterKey = "{ENTER}";
+
         [DllImport("User32.dll")]
         static extern int SetForegroundWindow(IntPtr hWnd);
 
@@ -57,6 +59,12 @@ namespace PasswordManager.Utilities
             SendKeys.SendWait("\t");
             Thread.Sleep(100);
             SendKeys.SendWait(credential.Password);
+            Thread.Sleep(100);
+            SendKeys.SendWait(_enterKey);
+            Thread.Sleep(500);
+            SendKeys.SendWait(_enterKey);
+            Thread.Sleep(500);
+            SendKeys.SendWait(_enterKey);
         }
     }
 }

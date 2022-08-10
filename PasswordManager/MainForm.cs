@@ -170,6 +170,7 @@ namespace PasswordManager
             DescriptionTextBox.Text = "";
             LoginTextBox.Text = "";
             PasswordTextBox.Text = "";
+            IsDefaultCheckBox.Checked = false;
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -184,11 +185,11 @@ namespace PasswordManager
             _jsonFileUtility.SaveFile(_credsPath, _credentials);
         }
 
-        private void RunAllButton_Click(object sender, EventArgs e)
+        private void RunDefaultCredentialsButton_Click(object sender, EventArgs e)
         {
-            if (_credentials.Count == 0)
+            if (_credentials.Where(x => x.IsDefault).Count() == 0)
             {
-                MessageBox.Show("Please enter at least one credential.");
+                MessageBox.Show("Please enter at least one default credential.");
                 return;
             }
             if (string.IsNullOrEmpty(_settings.LineagePath))

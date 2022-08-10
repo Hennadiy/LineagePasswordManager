@@ -47,7 +47,7 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.RemoveButton = new System.Windows.Forms.Button();
-            this.RunAllButton = new System.Windows.Forms.Button();
+            this.RunDefaultCredentialsButton = new System.Windows.Forms.Button();
             this.IsDefaultCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -232,15 +232,15 @@
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // RunAllButton
+            // RunDefaultCredentialsButton
             // 
-            this.RunAllButton.Location = new System.Drawing.Point(22, 516);
-            this.RunAllButton.Name = "RunAllButton";
-            this.RunAllButton.Size = new System.Drawing.Size(112, 35);
-            this.RunAllButton.TabIndex = 21;
-            this.RunAllButton.Text = "Run All";
-            this.RunAllButton.UseVisualStyleBackColor = true;
-            this.RunAllButton.Click += new System.EventHandler(this.RunAllButton_Click);
+            this.RunDefaultCredentialsButton.Location = new System.Drawing.Point(22, 516);
+            this.RunDefaultCredentialsButton.Name = "RunDefaultCredentialsButton";
+            this.RunDefaultCredentialsButton.Size = new System.Drawing.Size(203, 35);
+            this.RunDefaultCredentialsButton.TabIndex = 21;
+            this.RunDefaultCredentialsButton.Text = "Run Default Credentials";
+            this.RunDefaultCredentialsButton.UseVisualStyleBackColor = true;
+            this.RunDefaultCredentialsButton.Click += new System.EventHandler(this.RunDefaultCredentialsButton_Click);
             // 
             // IsDefaultCheckBox
             // 
@@ -258,7 +258,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 567);
             this.Controls.Add(this.IsDefaultCheckBox);
-            this.Controls.Add(this.RunAllButton);
+            this.Controls.Add(this.RunDefaultCredentialsButton);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.PasswordLabel);
@@ -307,7 +307,7 @@
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.Button RemoveButton;
-        private System.Windows.Forms.Button RunAllButton;
+        private System.Windows.Forms.Button RunDefaultCredentialsButton;
         private System.Windows.Forms.CheckBox IsDefaultCheckBox;
     }
 }
